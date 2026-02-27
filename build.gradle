@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.3'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.salesbot'
+version = '1.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    // Telegram Bot API
+    implementation 'org.telegram:telegrambots:6.9.7.1'
+
+    // YAML поддержка (уже входит в spring-boot-starter через snakeyaml)
+}
+
+bootJar {
+    archiveBaseName = 'salesbot'
+    archiveVersion = ''
+}
